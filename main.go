@@ -3,12 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	//alex := person{firstName: "Alex", lastName: "Anderson"}
+	jim := Person{
+		firstName: "Jim",
+		lastName:  "Party",
+		contact: ContactInfo{
+			email:   "jim@gmail.com",
+			zipCode: 94000,
+		},
+	}
 
-	var alex person
-	alex.firstName = "Alex"
-	alex.lastName = "Anderson"
-
-	fmt.Println(alex)
-	fmt.Printf("%+v", alex)
+	fmt.Printf("%+v", jim)
 }
