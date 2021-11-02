@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	cards := newDeckFromFile("cards.txt")
+	//alex := person{firstName: "Alex", lastName: "Anderson"}
 
-	fmt.Println(cards)
+	var alex person
+	alex.firstName = "Alex"
+	alex.lastName = "Anderson"
 
-	cards.shuffle()
-
-	fmt.Println(cards)
+	fmt.Println(alex)
+	fmt.Printf("%+v", alex)
 }
