@@ -1,15 +1,20 @@
 package main
 
+import "fmt"
+
 func main() {
-	jim := Person{
-		firstName: "Jim",
-		lastName:  "Party",
-		contactInfo: ContactInfo{
-			email:   "jim@gmail.com",
-			zipCode: 94000,
-		},
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf745",
 	}
 
-	jim.updateName("Jimmy")
-	jim.print()
+	colors["white"] = "#ffffff"
+
+	delete(colors, "green")
+
+	for color, hex := range colors {
+		fmt.Println(color, hex)
+	}
+
+	fmt.Println(colors)
 }
