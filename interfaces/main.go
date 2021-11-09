@@ -2,19 +2,29 @@ package main
 
 import "fmt"
 
+type bot interface {
+	getGreeting() string
+}
+
+type englishBot struct{}
+type spanishBot struct{}
+
 func main() {
-	colors := map[string]string{
-		"red":   "#ff0000",
-		"green": "#4bf745",
-	}
+	eb := englishBot{}
+	sb := spanishBot{}
+	printGreeting(eb)
+	printGreeting(sb)
+}
 
-	colors["white"] = "#ffffff"
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
+}
 
-	delete(colors, "green")
+func (englishBot) getGreeting() string {
+	// VERY custom logic for generating an english greeting
+	return "Hi There!"
+}
 
-	for color, hex := range colors {
-		fmt.Println(color, hex)
-	}
-
-	fmt.Println(colors)
+func (spanishBot) getGreeting() string {
+	return "Hola!"
 }
