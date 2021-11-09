@@ -1,4 +1,4 @@
-package main
+package structs
 
 type ContactInfo struct {
 	email   string
